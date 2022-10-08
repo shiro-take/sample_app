@@ -24,6 +24,7 @@ class ListsController < ApplicationController
   end
 
 
+
   private
   # ストロングパラメータ
   def list_params
