@@ -10,7 +10,8 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list.id)
     else
-      render :new
+      @lists = List.all
+      render :index
     end
   end
 
@@ -25,7 +26,7 @@ class ListsController < ApplicationController
   def edit
     @list = List.find(params[:id])
   end
-  
+
   def update
     list = List.find(params[:id])
     list.update(list_params)
